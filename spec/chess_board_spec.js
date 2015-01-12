@@ -1,4 +1,4 @@
-var ChessBoard = require("../chess_board.js");
+var ChessBoard = require("../js-chess.js").ChessBoard;
 var _ = require('lodash');
 
 describe('ChessBoard', function() {

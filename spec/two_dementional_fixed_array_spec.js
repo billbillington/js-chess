@@ -1,4 +1,4 @@
-var TwoDimensionalFixedArray = require("../two_dementional_fixed_array.js");
+var TwoDimensionalFixedArray = require("../lib/two_dementional_fixed_array.js");
 var _ = require('lodash');
 
 describe('TwoDimensionalFixedArray', function() {

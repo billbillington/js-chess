@@ -1,4 +1,4 @@
-var ChessArmy = require('../chess_army.js');
+var ChessArmy = require('../js-chess.js').ChessArmy;
 var _ = require('lodash');
 
 describe('ChessArmy', function() {
