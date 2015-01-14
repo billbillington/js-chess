@@ -3,7 +3,7 @@ var _ = require('lodash');
 
 describe('TwoDimensionalFixedArray', function() {
   describe('intialisation', function() {
-    var valid_args = { rowCount: 3, colCount: 3 };
+    var validArgs = { rowCount: 3, colCount: 3 };
 
     describe('with no arguments', function() {
       it('should raise an error about supplying arguments', function() {
@@ -15,13 +15,13 @@ describe('TwoDimensionalFixedArray', function() {
 
     describe('with valid arguments', function() {
       it('should instantiate without errors', function() {
-        new TwoDimensionalFixedArray(valid_args);
+        new TwoDimensionalFixedArray(validArgs);
       });
     });
 
     describe('without suppliy a rowCount', function() {
       it('should raise an error about supplying the argument', function() {
-        var args = _.omit(valid_args, 'rowCount');
+        var args = _.omit(validArgs, 'rowCount');
 
         expect(function() {
           new TwoDimensionalFixedArray(args);
@@ -31,7 +31,7 @@ describe('TwoDimensionalFixedArray', function() {
 
     describe('without suppliy a colCount', function() {
       it('should raise an error about supplying the argument', function() {
-        var args = _.omit(valid_args, 'colCount');
+        var args = _.omit(validArgs, 'colCount');
 
         expect(function() {
           new TwoDimensionalFixedArray(args);
