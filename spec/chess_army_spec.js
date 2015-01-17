@@ -7,7 +7,7 @@ describe('ChessArmy', function() {
       pieces = { king: function(){ return 'hiya'; }};
       classicArmy = new ChessArmy({ name: 'classic', pieces: pieces });
       pieces['king'] = function() { return 'byea'; };
-      expect(classicArmy.pieceConstructor('king')()).toEqual('hiya');
+      expect(classicArmy.Piece('king')()).toEqual('hiya');
     });
   });
 });
