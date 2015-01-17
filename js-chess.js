@@ -1,9 +1,7 @@
 module.exports = function() {
   return {
-    ChessBoard: require('./lib/chess_board.js'),
-    ChessArmy: require('./lib/chess_army.js'),
-    ChessPiece: require('./lib/chess_piece.js'),
-    ClassicChessArmy: require('./lib/classic_chess_army.js'),
-    ClassicChessSetup: require('./lib/classic_chess_setup.js')
+    Board: require('./lib/board.js'),
+    Army: require('./lib/army.js'),
+    Piece: require('./lib/piece.js')
   };
 }();
