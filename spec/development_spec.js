@@ -11,16 +11,16 @@ describe('Classic Chess', function() {
       army2: army2
     });
 
-    var whitePawn1 = new army1.Piece('pawn')();
-    var whitePawn2 = new army1.Piece('pawn')();
+    var whiteRook1 = new army1.Piece('rook')();
+    var whiteRook2 = new army1.Piece('rook')();
 
-    var blackPawn1 = new army2.Piece('pawn')();
+    var blackRook1 = new army2.Piece('rook')();
 
-    board.addPiece({ piece: whitePawn1, row: 0, col: 4 });
-    board.addPiece({ piece: whitePawn2, row: 1, col: 3 });
-    board.addPiece({ piece: blackPawn1, row: 1, col: 5 });
+    board.addPiece({ piece: whiteRook1, row: 1, col: 5 });
+    board.addPiece({ piece: whiteRook2, row: 1, col: 2 });
+    board.addPiece({ piece: blackRook1, row: 3, col: 5 });
 
     console.log();
-    console.log(whitePawn1.possibleMoves());
+    console.log(whiteRook1.attackedSquares(board));
   });
 });
