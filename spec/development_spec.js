@@ -11,16 +11,17 @@ describe('Classic Chess', function() {
       army2: army2
     });
 
-    var whiteRook1 = new army1.Piece('rook')();
-    var whiteRook2 = new army1.Piece('rook')();
+    var attackingPiece = new army1.Piece('queen')();
+    var freindlyPiece = new army1.Piece('rook')();
+    var enemyPiece = new army2.Piece('rook')();
 
-    var blackRook1 = new army2.Piece('rook')();
-
-    board.addPiece({ piece: whiteRook1, row: 1, col: 5 });
-    board.addPiece({ piece: whiteRook2, row: 1, col: 2 });
-    board.addPiece({ piece: blackRook1, row: 3, col: 5 });
+    board.addPiece({ piece: attackingPiece, location: { row: 4, col: 4 } });
+    board.addPiece({ piece: freindlyPiece, location: { row: 4, col: 1 } });
+    board.addPiece({ piece: enemyPiece, location: { row: 3, col: 7 } });
 
     console.log();
-    console.log(whiteRook1.attackedSquares(board));
+    console.log("Current Location: " + JSON.stringify(board.location(attackingPiece)));
+    console.log("Moves: " + JSON.stringify(attackingPiece.attackedSquares(board)));
+    console.log("Square count: " + JSON.stringify(attackingPiece.attackedSquares(board).length));
   });
 });
