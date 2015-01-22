@@ -11,7 +11,7 @@ describe('Classic Chess', function() {
       army2: army2
     });
 
-    var attackingPiece = new army1.Piece('pawn')();
+    var attackingPiece = new army1.Piece('knight')();
     var freindlyPiece = new army1.Piece('rook')();
     var enemyPiece = new army2.Piece('rook')();
 
