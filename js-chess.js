@@ -3,6 +3,7 @@ module.exports = function() {
     Board: require('./lib/board.js'),
     Army: require('./lib/army.js'),
     Piece: require('./lib/piece.js'),
-    Move: require('./lib/move.js')
+    Move: require('./lib/move.js'),
+    Setup: require('./lib/setup.js')
   };
 }();
