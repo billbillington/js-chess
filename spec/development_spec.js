@@ -11,7 +11,7 @@ describe('Classic Chess', function() {
       army2: army2
     });
 
-    var attackingPiece = new army1.Piece('king')();
+    var attackingPiece = new army1.Piece('pawn')();
     var freindlyPiece = new army1.Piece('rook')();
     var enemyPiece = new army2.Piece('rook')();
 
@@ -22,5 +22,6 @@ describe('Classic Chess', function() {
     console.log();
     console.log("Current Location: " + JSON.stringify(board.location(attackingPiece)));
     console.log("Attacked Squares: " + JSON.stringify(attackingPiece.attackedSquares(board)));
+    console.log("Move Squares: " + JSON.stringify(attackingPiece.moveSquares(board)));
   });
 });
