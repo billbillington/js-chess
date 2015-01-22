@@ -15,6 +15,6 @@ describe('Classic Chess', function() {
     var board = setupComponents.board;
 
     //Player 1 turn
-    var pieces = board.activePieces({ army: army1 });
+    console.log(board.activePieces({ army: army1 }));
   });
 });
