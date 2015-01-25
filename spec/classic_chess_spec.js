@@ -1,4 +1,5 @@
 var ClassicChess = require('../classic-chess.js');
+var GuiBoard = require('../lib/gui_board.js');
 var _ = require('lodash');
 
 describe('Classic Chess', function() {
@@ -14,7 +15,14 @@ describe('Classic Chess', function() {
     var army2 = setupComponents.armies[1];
     var board = setupComponents.board;
 
+
+    var guiBoard = new GuiBoard({
+      board: board,
+      army1: army1,
+      army2: army2
+    });
+
     //Player 1 turn
-    console.log(board.attackedSquares(army1));
+    guiBoard.print();
   });
 });
