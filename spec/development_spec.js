@@ -20,7 +20,7 @@ describe('Classic Chess', function() {
     board.addPiece({ piece: enemyPiece, location: { row: 3, col: 7 } });
 
     console.log();
-    console.log("Current Location: " + JSON.stringify(board.location(attackingPiece)));
+    console.log("Current Location: " + JSON.stringify(board.pieceLocation(attackingPiece)));
     console.log("Attacked Squares: " + JSON.stringify(attackingPiece.attackedSquares(board)));
     console.log("Move Squares: " + JSON.stringify(attackingPiece.moveSquares(board)));
   });
