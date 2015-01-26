@@ -22,7 +22,20 @@ describe('Classic Chess', function() {
       army2: army2
     });
 
-    //Player 1 turn
+    var army1Pieces = board.activePieces({
+      army: army1
+    });
+
+    var piece = army1Pieces[10];
+    var pieceLocation = board.pieceLocation(piece);
+    var possibleMoves = piece.possibleMoves(board);
+
+    guiBoard.print();
+
+    console.log(piece);
+    console.log('current location: ' + JSON.stringify(pieceLocation));
+    console.log(possibleMoves);
+
     guiBoard.print();
   });
 });
