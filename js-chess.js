@@ -4,6 +4,7 @@ module.exports = function() {
     Army: require('./lib/army.js'),
     Piece: require('./lib/piece.js'),
     Move: require('./lib/move.js'),
+    MoveDefinition: require('./lib/move_definition.js'),
     Setup: require('./lib/setup.js')
   };
 }();
