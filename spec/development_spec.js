@@ -12,13 +12,13 @@ describe('Classic Chess', function() {
       army2: army2
     });
 
-    var attackingPiece = new army1.Piece('rook')();
-    //var freindlyPiece = new army1.Piece('rook')();
-    //var enemyPiece = new army2.Piece('rook')();
+    var attackingPiece = new army1.Piece('pawn')();
+    var freindlyPiece = new army1.Piece('rook')();
+    var enemyPiece = new army2.Piece('rook')();
 
     board.addPiece({ piece: attackingPiece, location: { row: 4, col: 4 } });
-    //board.addPiece({ piece: freindlyPiece, location: { row: 4, col: 1 } });
-    //board.addPiece({ piece: enemyPiece, location: { row: 3, col: 7 } });
+    board.addPiece({ piece: freindlyPiece, location: { row: 5, col: 3 } });
+    board.addPiece({ piece: enemyPiece, location: { row: 5, col: 5 } });
 
     var guiBoard = new GuiBoard({
       board: board,
@@ -30,11 +30,14 @@ describe('Classic Chess', function() {
 
     var possibleMoves = attackingPiece.possibleMoves({ board: board });
 
+    console.log(_.map(possibleMoves, function(move) {
+      return move.destination();
+    }));
+
     possibleMoves[0].perform({
       board: board
     });
 
     guiBoard.print();
-
   });
 });
