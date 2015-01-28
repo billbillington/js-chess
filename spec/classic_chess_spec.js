@@ -27,7 +27,7 @@ describe('Classic Chess', function() {
     });
 
     var piece = army1Pieces[10];
-    var pieceLocation = board.pieceLocation(piece);
+    var pieceLocation = board.pieceLocation({ piece: piece });
     var possibleMoves = piece.possibleMoves({ board: board });
 
     guiBoard.print();
