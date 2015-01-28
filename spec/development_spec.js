@@ -26,19 +26,15 @@ describe('Classic Chess', function() {
       army2: army2
     });
 
-    console.log("piece location: " + JSON.stringify(board.pieceLocation(attackingPiece)));
-    console.log("possible moves: " + JSON.stringify(attackingPiece.possibleMoves({ board: board })));
-
     guiBoard.print();
 
+    var possibleMoves = attackingPiece.possibleMoves({ board: board });
 
-    //attackingPiece.possibleMoves({ board: board })[0].perform({
-    //  board: board
-    //});
+    possibleMoves[0].perform({
+      board: board
+    });
 
-    //console.log("piece location: " + JSON.stringify(board.pieceLocation(attackingPiece)));
-
-    //guiBoard.print();
+    guiBoard.print();
 
   });
 });

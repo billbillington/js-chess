@@ -28,13 +28,11 @@ describe('Classic Chess', function() {
 
     var piece = army1Pieces[10];
     var pieceLocation = board.pieceLocation(piece);
-    var possibleMoves = piece.possibleMoves(board);
+    var possibleMoves = piece.possibleMoves({ board: board });
 
     guiBoard.print();
 
-    console.log(piece);
-    console.log('current location: ' + JSON.stringify(pieceLocation));
-    console.log(possibleMoves);
+    console.log(possibleMoves[2].perform());
 
     guiBoard.print();
   });
