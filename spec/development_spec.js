@@ -13,12 +13,12 @@ describe('Classic Chess', function() {
     });
 
     var attackingPiece = new army1.Piece('pawn')();
-    var freindlyPiece = new army1.Piece('rook')();
-    var enemyPiece = new army2.Piece('rook')();
+    //var freindlyPiece = new army1.Piece('rook')();
+    //var enemyPiece = new army2.Piece('rook')();
 
-    board.addPiece({ piece: attackingPiece, location: { row: 4, col: 4 } });
-    board.addPiece({ piece: freindlyPiece, location: { row: 5, col: 3 } });
-    board.addPiece({ piece: enemyPiece, location: { row: 5, col: 5 } });
+    board.addPiece({ piece: attackingPiece, location: { row: 2, col: 4 } });
+    //board.addPiece({ piece: freindlyPiece, location: { row: 5, col: 3 } });
+    //board.addPiece({ piece: enemyPiece, location: { row: 5, col: 5 } });
 
     var guiBoard = new GuiBoard({
       board: board,
@@ -30,6 +30,10 @@ describe('Classic Chess', function() {
 
     var possibleMoves = attackingPiece.possibleMoves({ board: board });
 
+    console.log('current location:');
+
+    console.log('possible moves:');
+    console.log(board.pieceLocation({ piece: attackingPiece }));
     console.log(_.map(possibleMoves, function(move) {
       return move.destination();
     }));
@@ -39,5 +43,14 @@ describe('Classic Chess', function() {
     });
 
     guiBoard.print();
+
+    possibleMoves = attackingPiece.possibleMoves({ board: board });
+
+    console.log('current location:');
+    console.log(board.pieceLocation({ piece: attackingPiece }));
+    console.log('possible moves:');
+    console.log(_.map(possibleMoves, function(move) {
+      return move.destination();
+    }));
   });
 });

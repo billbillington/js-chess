@@ -32,7 +32,7 @@ describe('Classic Chess', function() {
 
     guiBoard.print();
 
-    console.log(possibleMoves[0].perform());
+    possibleMoves[0].perform();
 
     guiBoard.print();
   });
