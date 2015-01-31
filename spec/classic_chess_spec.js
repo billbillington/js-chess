@@ -14,5 +14,7 @@ describe('Classic Chess', function() {
     });
 
     guiBoard.print();
+
+    console.log(game.currentTurnInfo());
   });
 });
