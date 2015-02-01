@@ -4,7 +4,7 @@ var _ = require('lodash');
 
 describe('Classic Chess', function() {
   it('everything', function() {
-    var game = new ClassicChess.Game({ turnLimit: 40 });
+    var game = new ClassicChess.Game({ turnLimit: 200 });
     var board = game.board();
 
     var guiBoard = new GuiBoard({
