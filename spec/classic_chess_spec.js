@@ -13,13 +13,14 @@ describe('Classic Chess', function() {
       player2: game.player2()
     });
 
+    console.log('* Start *');
     guiBoard.print();
 
-    var turnInfo = game.currentTurnInfo();
-    for (var turns = 1; turns <= 4; turns++) {
-      console.log('* ' + turnInfo.player().name + ' *');
+    for (var turns = 1; turns <= 30; turns++) {
+      var turnInfo = game.currentTurnInfo();
+      console.log('* ' + turnInfo.player().name + '\'s move *');
       var piece = _.sample(turnInfo.movablePieces());
-      _.sample(piece.possibleMoves({ board: board })).perform();
+      game.makeMove({ move: _.sample(piece.possibleMoves({ board: board })) });
       guiBoard.print();
     }
   });
