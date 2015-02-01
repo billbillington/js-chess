@@ -20,7 +20,8 @@ describe('Classic Chess', function() {
       var turnInfo = game.currentTurnInfo();
       console.log('* ' + turnInfo.player().name + '\'s move *');
       var piece = _.sample(turnInfo.movablePieces());
-      game.makeMove({ move: _.sample(piece.possibleMoves({ board: board })) });
+      var move  = _.sample(piece.possibleMoves({ board: board }));
+      game.makeMove({ move: move });
       guiBoard.print();
     }
   });
