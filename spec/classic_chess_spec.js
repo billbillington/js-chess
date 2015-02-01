@@ -16,7 +16,7 @@ describe('Classic Chess', function() {
     console.log('* Start *');
     guiBoard.print();
 
-    for (var turns = 1; turns <= 30; turns++) {
+    for (var turns = 1; turns <= 40; turns++) {
       var turnInfo = game.currentTurnInfo();
       console.log('* ' + turnInfo.player().name + '\'s move *');
       var piece = _.sample(turnInfo.movablePieces());
