@@ -5,16 +5,22 @@ var _ = require('lodash');
 describe('Classic Chess', function() {
   it('everything', function() {
     var game = new ClassicChess.Game();
-
+    var board = game.board();
 
     var guiBoard = new GuiBoard({
-      board: game.board(),
+      board: board,
       player1: game.player1(),
       player2: game.player2()
     });
 
     guiBoard.print();
 
-    console.log(game.currentTurnInfo());
+    var turnInfo = game.currentTurnInfo();
+    for (var turns = 1; turns <= 4; turns++) {
+      console.log('* ' + turnInfo.player().name + ' *');
+      var piece = _.sample(turnInfo.movablePieces());
+      _.sample(piece.possibleMoves({ board: board })).perform();
+      guiBoard.print();
+    }
   });
 });
