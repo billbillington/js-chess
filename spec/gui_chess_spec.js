@@ -1,12 +1,12 @@
-var ClassicChess = require('../classic-chess.js');
+var JSChess = require('../js-chess.js');
 var GuiBoard = require('../lib/gui_board.js');
 var _ = require('lodash');
 
 describe('Classic Chess', function() {
   it('everything', function() {
-    var setup = new ClassicChess.Setup({
-      Board: ClassicChess.Board,
-      Armies: [ClassicChess.Army, ClassicChess.Army]
+    var setup = new JSChess.Setup({
+      Board: JSChess.Board,
+      Armies: [JSChess.Army, JSChess.Army]
     });
 
     setupComponents = setup.perform();

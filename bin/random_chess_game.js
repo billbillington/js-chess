@@ -1,9 +1,9 @@
 #! /usr/local/bin/node
-var ClassicChess = require('../classic-chess.js');
+var JSChess = require('../js-chess.js');
 var GuiBoard = require('../lib/gui_board.js');
 var _ = require('lodash');
 
-var game = new ClassicChess.Game({ turnLimit: 200 });
+var game = new JSChess.Game({ turnLimit: 200 });
 var board = game.board();
 
 var guiBoard = new GuiBoard({

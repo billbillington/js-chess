@@ -1,13 +1,13 @@
-var ClassicChess = require('../classic-chess.js');
+var JSChess = require('../js-chess.js');
 var GuiBoard = require('../lib/gui_board.js');
 var _ = require('lodash');
 
 describe('Classic Chess', function() {
   it('everything', function() {
-    var army1 = new ClassicChess.Army({ forwardDirection: 'down' });
-    var army2 = new ClassicChess.Army({ forwardDirection: 'up' });
+    var army1 = new JSChess.Army({ forwardDirection: 'down' });
+    var army2 = new JSChess.Army({ forwardDirection: 'up' });
 
-    var board = new ClassicChess.Board({
+    var board = new JSChess.Board({
       army1: army1,
       army2: army2
     });
