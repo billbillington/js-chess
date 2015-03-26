@@ -4,6 +4,7 @@ module.exports = function() {
     Army: require('./lib/army.js'),
     Piece: require('./lib/piece.js'),
     MoveDefinition: require('./lib/move_definition.js'),
+    Game: require('./lib/game.js'),
     Setup: require('./lib/setup.js'),
     Pieces: {
       Pawn: require('./lib/pieces/pawn.js'),
