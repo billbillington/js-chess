@@ -8,8 +8,8 @@ var board = game.board();
 
 var guiBoard = new GuiBoard({
   board: board,
-  player1: game.player1(),
-  player2: game.player2()
+  army1: game.player1().army,
+  army2: game.player2().army
 });
 
 console.log('* Start *');

@@ -24,8 +24,8 @@ describe('Classic Chess', function() {
 
     var guiBoard = new GuiBoard({
       board: board,
-      player1: player1,
-      player2: player2
+      army1: player1.army,
+      army2: player2.army
     });
 
     defendingPiece = new army1.Piece('king')();
