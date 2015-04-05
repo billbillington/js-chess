@@ -1,9 +1,10 @@
 #! /usr/local/bin/node
 var JSChess = require('../js-chess.js');
+var IDGenerator = require('../lib/id_generator.js');
 var GuiBoard = require('../lib/gui_board.js');
 var _ = require('lodash');
 
-var game = new JSChess.Game({ turnLimit: 200 });
+var game = new JSChess.Game({ idGenerator: new IDGenerator(), turnLimit: 200 });
 var board = game.board();
 
 var guiBoard = new GuiBoard({
