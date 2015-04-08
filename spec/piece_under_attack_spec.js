@@ -1,12 +1,23 @@
 var JSChess = require('../js-chess.js');
+var IDGenerator = require('../lib/id_generator.js');
 var _ = require('lodash');
 
 describe('Classic Chess', function() {
   it('everything', function() {
-    var army1 = new JSChess.Army({ forwardDirection: 'down' });
-    var army2 = new JSChess.Army({ forwardDirection: 'up' });
+    var idGenerator = new IDGenerator();
+
+    var army1 = new JSChess.Army({
+      idGenerator: idGenerator,
+      forwardDirection: 'down'
+    });
+    var army2 = new JSChess.Army({
+      idGenerator: idGenerator,
+      forwardDirection: 'up'
+    });
+
 
     var board = new JSChess.Board({
+      idGenerator: idGenerator,
       army1: army1,
       army2: army2
     });
@@ -21,15 +32,15 @@ describe('Classic Chess', function() {
       army: army2
     };
 
-    defendingPiece = new army1.Piece('king')();
-    board.addPiece({
-      piece: defendingPiece,
+    defendingPiece = board.addPiece({
+      army: army1,
+      rank: 'king',
       location: { row: 0, col: 2 }
     });
 
-    attackingPiece = new army2.Piece('queen')();
-    board.addPiece({
-      piece: attackingPiece,
+    attackingPiece = board.addPiece({
+      army: army2,
+      rank: 'queen',
       location: { row: 7, col: 2 }
     });
 
