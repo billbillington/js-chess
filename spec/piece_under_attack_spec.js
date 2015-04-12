@@ -46,6 +46,6 @@ describe('Classic Chess', function() {
 
     expect(board.pieceUnderAttack({
       piece: defendingPiece
-    })).toBe(true);
+    })).toEqual(true);
   });
 });
