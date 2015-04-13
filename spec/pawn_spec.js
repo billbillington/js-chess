@@ -28,13 +28,12 @@ describe('Pawn', function() {
     });
 
     var possibleMoves = pawn.possibleMoves({ board: board });
-    var moveNames = _.map(possibleMoves, function(moves) {
-      return moves.name();
-    });
 
     expect(possibleMoves.length).toEqual(2);
-    expect(_.contains(moveNames, 'forward one space')).toEqual(true);
-    expect(_.contains(moveNames, 'forward two spaces')).toEqual(true);
+    expect(possibleMoves[0].name()).toEqual('forward', 'forward one space move not found');
+    expect(possibleMoves[0].destination()).toEqual({ row: 1, col: 2 }, 'forward one space move not found');
+    expect(possibleMoves[1].name()).toEqual('forward', 'forward two spaces move not found');
+    expect(possibleMoves[1].destination()).toEqual({ row: 2, col: 2 }, 'forward two spaces move not found');
   });
 
   it('cannot move 2 squares after first move', function() {
@@ -61,12 +60,10 @@ describe('Pawn', function() {
     });
 
     var possibleMoves = pawn.possibleMoves({ board: board });
-    var moveNames = _.map(possibleMoves, function(moves) {
-      return moves.name();
-    });
 
     expect(possibleMoves.length).toEqual(1);
-    expect(_.contains(moveNames, 'forward one space')).toEqual(true);
+    expect(possibleMoves[0].name()).toEqual('forward', 'forward one space move not found');
+    expect(possibleMoves[0].destination()).toEqual({ row: 1, col: 2 }, 'forward one space move not found');
   });
 
   it('2 second move blocked', function() {
@@ -98,12 +95,10 @@ describe('Pawn', function() {
     });
 
     var possibleMoves = pawn.possibleMoves({ board: board });
-    var moveNames = _.map(possibleMoves, function(moves) {
-      return moves.name();
-    });
 
     expect(possibleMoves.length).toEqual(1);
-    expect(_.contains(moveNames, 'forward one space')).toEqual(true);
+    expect(possibleMoves[0].name()).toEqual('forward', 'forward one space move not found');
+    expect(possibleMoves[0].destination()).toEqual({ row: 1, col: 2 }, 'forward one space move not found');
   });
 
   it('Movement completely blocked', function() {
