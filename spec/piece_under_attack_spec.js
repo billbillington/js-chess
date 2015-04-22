@@ -32,13 +32,13 @@ describe('Classic Chess', function() {
       army: army2
     };
 
-    defendingPiece = board.addPiece({
+    var defendingPiece = board.addPiece({
       army: army1,
       rank: 'king',
       location: { row: 0, col: 2 }
     });
 
-    attackingPiece = board.addPiece({
+    var attackingPiece = board.addPiece({
       army: army2,
       rank: 'queen',
       location: { row: 7, col: 2 }
