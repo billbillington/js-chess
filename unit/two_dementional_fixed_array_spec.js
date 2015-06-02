@@ -62,56 +62,90 @@ describe('TwoDimensionalFixedArray', function() {
     });
 
     describe('supplying a symetrical array', function() {
+      var rowCount = 3;
+      var colCount = 5;
       var array = [[1, 2, 3, 4, 5], [5, 4, 3, 2, 1], [1, 2, 3, 4, 5]];
 
       it('should not raise an error', function(){
         expect(function() {
-          new TwoDimensionalFixedArray.fromArray({ data: array });
+          new TwoDimensionalFixedArray.fromArray({
+            rowCount: rowCount,
+            colCount: colCount,
+            data: array
+          });
         }).not.toThrow();
       });
 
       it('should report correct row count', function() {
         expect(
-          new TwoDimensionalFixedArray.fromArray({ data: array }).rowCount()
-        ).toEqual(3);
+          new TwoDimensionalFixedArray.fromArray({
+            rowCount: rowCount,
+            colCount: colCount,
+            data: array
+          }).rowCount()
+        ).toEqual(rowCount);
       });
 
       it('should report correct col count', function() {
         expect(
-          new TwoDimensionalFixedArray.fromArray({ data: array }).colCount()
-        ).toEqual(5);
+          new TwoDimensionalFixedArray.fromArray({
+            rowCount: rowCount,
+            colCount: colCount,
+            data: array
+          }).colCount()
+        ).toEqual(colCount);
       });
     });
 
-    describe('supplying jagged  array', function() {
-      var array = [[1, 2], [5, 4, 3, 2, 1], [1, 2, 3]];
+    describe('supplying an array larger than rowCount and colCount', function(){
+      var rowCount = 3;
+      var colCount = 3;
+      var array = [[1, 2], [2, 3, 4, 5, 6, 7], [3, 4], [4,5]];
 
-      it('should not raise an error', function(){
-        expect(function() {
-          new TwoDimensionalFixedArray.fromArray({ data: array });
+      it('should initialise without error', function(){
+        expect(function(){
+          new TwoDimensionalFixedArray.fromArray({ rowCount: rowCount, colCount: colCount, data: array });
         }).not.toThrow();
       });
 
       it('should report correct row count', function() {
         expect(
-          new TwoDimensionalFixedArray.fromArray({ data: array }).rowCount()
-        ).toEqual(3);
+          new TwoDimensionalFixedArray.fromArray({
+            rowCount: rowCount,
+            colCount: colCount,
+            data: array
+          }).rowCount()
+        ).toEqual(rowCount);
       });
 
-      it('should take count of longest column', function() {
+      it('should report correct col count', function() {
         expect(
-          new TwoDimensionalFixedArray.fromArray({ data: array }).colCount()
-        ).toEqual(5);
+          new TwoDimensionalFixedArray.fromArray({
+            rowCount: rowCount,
+            colCount: colCount,
+            data: array
+          }).colCount()
+        ).toEqual(colCount);
       });
     });
 
-    describe('supplying an array containing non arrays', function() {
+    describe('supplying an array containing undefined values', function() {
       var array = [[1, 2], undefined, [1, 2, 3]];
+
+      it('should intialise without throwing an error', function(){
+        expect(function() {
+          new TwoDimensionalFixedArray.fromArray({ rowCount: 3, colCount: 2, data: array });
+        }).not.toThrow(new Error('Must supply a multi dimentional array'));
+      });
+    });
+
+    describe('supplying an array containing non array objects', function() {
+      var array = [[1, 2], {}, [1, 2, 3]];
 
       it('should raise an error about the argument supplied', function(){
         expect(function() {
-          new TwoDimensionalFixedArray.fromArray({ data: array });
-        }).toThrow();
+          new TwoDimensionalFixedArray.fromArray({ rowCount: 3, colCount: 2, data: array });
+        }).toThrow(new Error('Must supply a multi dimentional array'));
       });
     });
   });
