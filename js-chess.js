@@ -12,7 +12,8 @@ module.exports = function() {
       Knight: require('./lib/pieces/knight.js'),
       Rook: require('./lib/pieces/rook.js'),
       Queen: require('./lib/pieces/queen.js'),
-      King: require('./lib/pieces/king.js')
+      King: require('./lib/pieces/king.js'),
+      Null: require('./lib/pieces/null.js')
     }
   };
 }();
