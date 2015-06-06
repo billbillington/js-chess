@@ -8,10 +8,12 @@ describe('check', function() {
   it('when king is under attack kings should be in check', function() {
     var army1 = new JSChess.Army({
       idGenerator: idGenerator,
+      id: idGenerator.nextID(),
       forwardDirection: 'down'
     });
     var army2 = new JSChess.Army({
       idGenerator: idGenerator,
+      id: idGenerator.nextID(),
       forwardDirection: 'up'
     });
 
@@ -46,10 +48,12 @@ describe('check', function() {
   it('when in check defender can only move if it gets king out of check', function() {
     var army1 = new JSChess.Army({
       idGenerator: idGenerator,
+      id: idGenerator.nextID(),
       forwardDirection: 'down'
     });
     var army2 = new JSChess.Army({
       idGenerator: idGenerator,
+      id: idGenerator.nextID(),
       forwardDirection: 'up'
     });
 

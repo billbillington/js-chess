@@ -8,10 +8,12 @@ describe('Pawn', function() {
   it('unblocked can move forward one or two squares', function() {
     var army1 = new JSChess.Army({
       idGenerator: idGenerator,
+      id: idGenerator.nextID(),
       forwardDirection: 'down'
     });
     var army2 = new JSChess.Army({
       idGenerator: idGenerator,
+      id: idGenerator.nextID(),
       forwardDirection: 'up'
     });
 
@@ -39,10 +41,12 @@ describe('Pawn', function() {
   it('cannot move 2 squares after first move', function() {
     var army1 = new JSChess.Army({
       idGenerator: idGenerator,
+      id: idGenerator.nextID(),
       forwardDirection: 'down'
     });
     var army2 = new JSChess.Army({
       idGenerator: idGenerator,
+      id: idGenerator.nextID(),
       forwardDirection: 'up'
     });
 
@@ -69,10 +73,12 @@ describe('Pawn', function() {
   it('2 second move blocked', function() {
     var army1 = new JSChess.Army({
       idGenerator: idGenerator,
+      id: idGenerator.nextID(),
       forwardDirection: 'down'
     });
     var army2 = new JSChess.Army({
       idGenerator: idGenerator,
+      id: idGenerator.nextID(),
       forwardDirection: 'up'
     });
 
@@ -104,10 +110,12 @@ describe('Pawn', function() {
   it('Movement completely blocked', function() {
     var army1 = new JSChess.Army({
       idGenerator: idGenerator,
+      id: idGenerator.nextID(),
       forwardDirection: 'down'
     });
     var army2 = new JSChess.Army({
       idGenerator: idGenerator,
+      id: idGenerator.nextID(),
       forwardDirection: 'up'
     });
 

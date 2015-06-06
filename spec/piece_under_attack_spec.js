@@ -8,10 +8,12 @@ describe('Classic Chess', function() {
 
     var army1 = new JSChess.Army({
       idGenerator: idGenerator,
+      id: idGenerator.nextID(),
       forwardDirection: 'down'
     });
     var army2 = new JSChess.Army({
       idGenerator: idGenerator,
+      id: idGenerator.nextID(),
       forwardDirection: 'up'
     });
 
