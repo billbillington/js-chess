@@ -2,8 +2,10 @@ var TwoDimensionalFixedArray = require("../lib/two_dementional_fixed_array.js");
 var _ = require('lodash');
 
 describe('TwoDimensionalFixedArray', function() {
+  var nullFindCondition = function(){};
+
   describe('intialisation from dimentions', function() {
-    var validArgs = { rowCount: 11, colCount: 9 };
+    var validArgs = { rowCount: 11, colCount: 9, findCondition: nullFindCondition };
 
     describe('with no arguments', function() {
       it('should raise an error about supplying arguments', function() {
@@ -71,6 +73,7 @@ describe('TwoDimensionalFixedArray', function() {
           new TwoDimensionalFixedArray.fromArray({
             rowCount: rowCount,
             colCount: colCount,
+            findCondition: nullFindCondition,
             data: array
           });
         }).not.toThrow();
@@ -81,6 +84,7 @@ describe('TwoDimensionalFixedArray', function() {
           new TwoDimensionalFixedArray.fromArray({
             rowCount: rowCount,
             colCount: colCount,
+            findCondition: nullFindCondition,
             data: array
           }).rowCount()
         ).toEqual(rowCount);
@@ -91,6 +95,7 @@ describe('TwoDimensionalFixedArray', function() {
           new TwoDimensionalFixedArray.fromArray({
             rowCount: rowCount,
             colCount: colCount,
+            findCondition: nullFindCondition,
             data: array
           }).colCount()
         ).toEqual(colCount);
@@ -104,7 +109,12 @@ describe('TwoDimensionalFixedArray', function() {
 
       it('should initialise without error', function(){
         expect(function(){
-          new TwoDimensionalFixedArray.fromArray({ rowCount: rowCount, colCount: colCount, data: array });
+          new TwoDimensionalFixedArray.fromArray({
+            rowCount: rowCount,
+            colCount: colCount,
+            findCondition: nullFindCondition,
+            data: array
+          });
         }).not.toThrow();
       });
 
@@ -113,6 +123,7 @@ describe('TwoDimensionalFixedArray', function() {
           new TwoDimensionalFixedArray.fromArray({
             rowCount: rowCount,
             colCount: colCount,
+            findCondition: nullFindCondition,
             data: array
           }).rowCount()
         ).toEqual(rowCount);
@@ -123,6 +134,7 @@ describe('TwoDimensionalFixedArray', function() {
           new TwoDimensionalFixedArray.fromArray({
             rowCount: rowCount,
             colCount: colCount,
+            findCondition: nullFindCondition,
             data: array
           }).colCount()
         ).toEqual(colCount);
@@ -134,7 +146,12 @@ describe('TwoDimensionalFixedArray', function() {
 
       it('should intialise without throwing an error', function(){
         expect(function() {
-          new TwoDimensionalFixedArray.fromArray({ rowCount: 3, colCount: 2, data: array });
+          new TwoDimensionalFixedArray.fromArray({
+            rowCount: 3,
+            colCount: 2,
+            findCondition: nullFindCondition,
+            data: array
+          });
         }).not.toThrow(new Error('Must supply a multi dimentional array'));
       });
     });
@@ -144,7 +161,12 @@ describe('TwoDimensionalFixedArray', function() {
 
       it('should raise an error about the argument supplied', function(){
         expect(function() {
-          new TwoDimensionalFixedArray.fromArray({ rowCount: 3, colCount: 2, data: array });
+          new TwoDimensionalFixedArray.fromArray({
+            rowCount: 3,
+            colCount: 2,
+            findCondition: nullFindCondition,
+            data: array
+          });
         }).toThrow(new Error('Must supply a multi dimentional array'));
       });
     });
@@ -155,7 +177,11 @@ describe('TwoDimensionalFixedArray', function() {
 
     describe('called with valid parameters', function() {
       it('should not throw an error', function() {
-        subject = new TwoDimensionalFixedArray.fromDimentions({ colCount: 3, rowCount: 3 });
+        subject = new TwoDimensionalFixedArray.fromDimentions({
+          colCount: 3,
+          rowCount: 3,
+          findCondition: nullFindCondition
+        });
         expect(function() {
           subject.set({ item: anyObject, location: { row: 2, col: 2 } });
         }).not.toThrow();
@@ -164,7 +190,11 @@ describe('TwoDimensionalFixedArray', function() {
 
     describe('when no arguments are supplied', function() {
       it('should throw an error', function() {
-        subject = new TwoDimensionalFixedArray.fromDimentions({ colCount: 3, rowCount: 3 });
+        subject = new TwoDimensionalFixedArray.fromDimentions({
+          colCount: 3,
+          rowCount: 3,
+          findCondition: nullFindCondition
+        });
         expect(function() {
           subject.set();
         }).toThrow();
@@ -173,7 +203,11 @@ describe('TwoDimensionalFixedArray', function() {
 
     describe('when negative row index supplied', function() {
       it('should throw an error', function() {
-        subject = new TwoDimensionalFixedArray.fromDimentions({ colCount: 3, rowCount: 3 });
+        subject = new TwoDimensionalFixedArray.fromDimentions({
+          colCount: 3,
+          rowCount: 3,
+          findCondition: nullFindCondition
+        });
         expect(function() {
           subject.set({ item: anyObject, location: { row: -1, col: 1 } });
         }).toThrow();
@@ -182,7 +216,11 @@ describe('TwoDimensionalFixedArray', function() {
 
     describe('when negative col index supplied', function() {
       it('should throw an error', function() {
-        subject = new TwoDimensionalFixedArray.fromDimentions({ colCount: 3, rowCount: 3 });
+        subject = new TwoDimensionalFixedArray.fromDimentions({
+          colCount: 3,
+          rowCount: 3,
+          findCondition: nullFindCondition
+        });
         expect(function() {
           subject.set({ item: anyObject, location: { row: 1, col: -1 } });
         }).toThrow();
@@ -191,7 +229,11 @@ describe('TwoDimensionalFixedArray', function() {
 
     describe('when out of bounds row index is supplied', function() {
       it('should throw an error', function() {
-        subject = new TwoDimensionalFixedArray.fromDimentions({ colCount: 2, rowCount: 2 });
+        subject = new TwoDimensionalFixedArray.fromDimentions({
+          colCount: 2,
+          rowCount: 2,
+          findCondition: nullFindCondition
+        });
         expect(function() {
           subject.set({ item: anyObject, location: {row: 2, col: 1 } });
         }).toThrow();
@@ -200,7 +242,11 @@ describe('TwoDimensionalFixedArray', function() {
 
     describe('when out of bounds col index is supplied', function() {
       it('should throw an error', function() {
-        subject = new TwoDimensionalFixedArray.fromDimentions({ colCount: 2, rowCount: 2 });
+        subject = new TwoDimensionalFixedArray.fromDimentions({
+          colCount: 2,
+          rowCount: 2,
+          findCondition: nullFindCondition
+        });
         expect(function() {
           subject.set({ item: anyObject, location: { row: 1, col: 2 } });
         }).toThrow();
@@ -213,7 +259,11 @@ describe('TwoDimensionalFixedArray', function() {
 
     describe('when no arguments are supplied', function() {
       it('should throw an error', function() {
-        subject = new TwoDimensionalFixedArray.fromDimentions({ colCount: 2, rowCount: 2 });
+        subject = new TwoDimensionalFixedArray.fromDimentions({
+          colCount: 2,
+          rowCount: 2,
+          findCondition: nullFindCondition
+        });
         expect(function() { subject.get(); }).toThrow();
       });
     });
@@ -221,7 +271,11 @@ describe('TwoDimensionalFixedArray', function() {
 
   describe('called with valid parameters', function() {
     it('should not throw an error', function() {
-      subject = new TwoDimensionalFixedArray.fromDimentions({ colCount: 3, rowCount: 3 });
+      subject = new TwoDimensionalFixedArray.fromDimentions({
+        colCount: 3,
+        rowCount: 3,
+        findCondition: nullFindCondition
+      });
       expect(function() {
         subject.get({ location: { row: 2, col: 2 } });
       }).not.toThrow();
@@ -230,7 +284,11 @@ describe('TwoDimensionalFixedArray', function() {
 
   describe('when negative row index supplied', function() {
     it('should throw an error', function() {
-      subject = new TwoDimensionalFixedArray.fromDimentions({ colCount: 3, rowCount: 3 });
+      subject = new TwoDimensionalFixedArray.fromDimentions({
+        colCount: 3,
+        rowCount: 3,
+        findCondition: nullFindCondition
+      });
       expect(function() {
         subject.get({ location: { row: -1, col: 1 } });
       }).toThrow();
@@ -239,7 +297,11 @@ describe('TwoDimensionalFixedArray', function() {
 
   describe('when negative col index supplied', function() {
     it('should throw an error', function() {
-      subject = new TwoDimensionalFixedArray.fromDimentions({ colCount: 3, rowCount: 3 });
+      subject = new TwoDimensionalFixedArray.fromDimentions({
+        colCount: 3,
+        rowCount: 3,
+        findCondition: nullFindCondition
+      });
       expect(function() {
         subject.get({ location: { row: 1, col: -1 } });
       }).toThrow();
@@ -248,7 +310,11 @@ describe('TwoDimensionalFixedArray', function() {
 
   describe('when out of bounds row index is supplied', function() {
     it('should throw an error', function() {
-      subject = new TwoDimensionalFixedArray.fromDimentions({ colCount: 2, rowCount: 2 });
+      subject = new TwoDimensionalFixedArray.fromDimentions({
+        colCount: 2,
+        rowCount: 2,
+        findCondition: nullFindCondition
+      });
       expect(function() {
         subject.get({ location: { row: 2, col: 1 } });
       }).toThrow();
@@ -257,7 +323,11 @@ describe('TwoDimensionalFixedArray', function() {
 
   describe('when out of bounds col index is supplied', function() {
     it('should throw an error', function() {
-      subject = new TwoDimensionalFixedArray.fromDimentions({ colCount: 2, rowCount: 2 });
+      subject = new TwoDimensionalFixedArray.fromDimentions({
+        colCount: 2,
+        rowCount: 2,
+        findCondition: nullFindCondition
+      });
       expect(function() {
         subject.get({ location: { row: 1, col: 2 } });
       }).toThrow();
@@ -267,7 +337,11 @@ describe('TwoDimensionalFixedArray', function() {
   describe('object storage and retreival', function() {
     describe('attempting to access empty location', function() {
       it('should return undefined', function() {
-        subject = new TwoDimensionalFixedArray.fromDimentions({ colCount: 2, rowCount: 2 });
+        subject = new TwoDimensionalFixedArray.fromDimentions({
+          colCount: 2,
+          rowCount: 2,
+          findCondition: nullFindCondition
+        });
         expect(subject.get({ location: { row:1, col:1 } })).toBe(undefined);
       });
     });
@@ -275,7 +349,11 @@ describe('TwoDimensionalFixedArray', function() {
     describe('storing object and reteiving it', function() {
       it('should return the object', function() {
         stored_object = jasmine.createSpy('stored object');
-        subject = new TwoDimensionalFixedArray.fromDimentions({ colCount: 2, rowCount: 2 });
+        subject = new TwoDimensionalFixedArray.fromDimentions({
+          colCount: 2,
+          rowCount: 2,
+          findCondition: nullFindCondition
+        });
         subject.set({ item: stored_object, location: { row: 0, col: 1 } });
         expect(subject.get({ location: { row:0, col:1 } })).toBe(stored_object);
       });
@@ -285,7 +363,11 @@ describe('TwoDimensionalFixedArray', function() {
       it('should return the object', function() {
         object1 = jasmine.createSpy('object 1');
         object2 = jasmine.createSpy('object 2');
-        subject = new TwoDimensionalFixedArray.fromDimentions({ colCount: 2, rowCount: 2 });
+        subject = new TwoDimensionalFixedArray.fromDimentions({
+          colCount: 2,
+          rowCount: 2,
+          findCondition: nullFindCondition
+        });
         subject.set({ item: object1, location: { row: 0, col: 1 } });
         subject.set({ item: object2, location: { row: 0, col: 1 } });
         expect(subject.get({ location: { row: 0, col:1 } })).toBe(object2);
