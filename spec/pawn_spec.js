@@ -23,7 +23,7 @@ describe('Pawn', function() {
         });
 
         board = new JSChess.Board({
-          idGenerator: idGenerator,
+          id: idGenerator.nextID(),
           army1: army1,
           army2: army2
         });
@@ -66,7 +66,7 @@ describe('Pawn', function() {
         });
 
         board = new JSChess.Board({
-          idGenerator: idGenerator,
+          id: idGenerator.nextID(),
           army1: army1,
           army2: army2
         });
@@ -111,7 +111,7 @@ describe('Pawn', function() {
       });
 
       board = new JSChess.Board({
-        idGenerator: idGenerator,
+        id: idGenerator.nextID(),
         army1: army1,
         army2: army2
       });
@@ -160,7 +160,7 @@ describe('Pawn', function() {
       });
 
       board = new JSChess.Board({
-        idGenerator: idGenerator,
+        id: idGenerator.nextID(),
         army1: army1,
         army2: army2
       });

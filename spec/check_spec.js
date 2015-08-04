@@ -18,7 +18,7 @@ describe('check', function() {
     });
 
     var board = new JSChess.Board({
-      idGenerator: idGenerator,
+      id: idGenerator.nextID(),
       army1: army1,
       army2: army2
     });
@@ -58,7 +58,7 @@ describe('check', function() {
     });
 
     var board = new JSChess.Board({
-      idGenerator: idGenerator,
+      id: idGenerator.nextID(),
       army1: army1,
       army2: army2
     });
