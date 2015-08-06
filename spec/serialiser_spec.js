@@ -103,4 +103,24 @@ describe('Serialiser', function() {
       expect(Serialiser.serialise(game)).toEqual(expected);
     });
   });
+
+  describe('deserialise()', function(){
+    it('can serialise a nested array', function(){
+      expect(
+        Serialiser.deserialise({
+          graph: [null, 'hi', 34.34, ['fo', null]],
+          repository: {}
+        })
+      ).toEqual(
+        [null, 'hi', 34.34, ['fo', null]]
+      );
+    });
+
+    fit('deserialise chess game', function(){
+      var json = JSON.parse(fs.readFileSync('./states/classic_chess_setup.json', 'utf8'));
+
+      var game = Serialiser.deserialise(json);
+      expect(game).toEqual({});
+    });
+  });
 });
