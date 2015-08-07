@@ -1,14 +1,19 @@
 {
   "graph": {
     "id": 2,
+    "id": 2,
     "type": "Game"
   },
   "repository": {
     "IDGenerator": {
-      "1": { "lastID": 37 }
+      "1": {
+        "id": 1,
+        "lastID": 37
+      }
     },
     "Game": {
       "2": {
+        "id": 2,
         "idGenerator": { "id": 1, "type": "IDGenerator" },
         "turnLimit": 0,
         "player1": {
@@ -25,6 +30,7 @@
     },
     "Army": {
       "3": {
+        "id": 3,
         "idGenerator": { "id": 1, "type": "IDGenerator" },
         "activePieces": [
           { "id": 6,  "type": "Piece" },
@@ -49,6 +55,7 @@
         "forwardDirection": "down"
       },
       "4": {
+        "id": 4,
         "idGenerator": { "id": 1, "type": "IDGenerator" },
         "activePieces": [
           { "id": 22, "type": "Piece" },
@@ -75,6 +82,7 @@
     },
     "Board": {
       "5": {
+        "id": 5,
         "armies": [
           { "id": 3, "type": "Army" },
           { "id": 4, "type": "Army" }
@@ -129,192 +137,224 @@
     },
     "Piece": {
       "6": {
+        "id": 6,
         "army": { "id": 3, "type": "Army" },
         "rank": "rook",
         "isKing": false,
         "moveCount": 0
       },
       "7": {
+        "id": 7,
         "army": { "id": 3, "type": "Army" },
         "rank": "bishop",
         "isKing": false,
         "moveCount": 0
       },
       "8": {
+        "id": 8,
         "army": { "id": 3, "type": "Army" },
         "rank": "knight",
         "isKing": false,
         "moveCount": 0
       },
       "9": {
+        "id": 9,
         "army": { "id": 3, "type": "Army" },
         "rank": "queen",
         "isKing": false,
         "moveCount": 0
       },
       "10": {
+        "id": 10,
         "army": { "id": 3, "type": "Army" },
         "rank": "king",
         "isKing": true,
         "moveCount": 0
       },
       "11": {
+        "id": 11,
         "army": { "id": 3, "type": "Army" },
         "rank": "knight",
         "isKing": false,
         "moveCount": 0
       },
       "12": {
+        "id": 12,
         "army": { "id": 3, "type": "Army" },
         "rank": "bishop",
         "isKing": false,
         "moveCount": 0
       },
       "13": {
+        "id": 13,
         "army": { "id": 3, "type": "Army" },
         "rank": "rook",
         "isKing": false,
         "moveCount": 0
       },
       "14": {
+        "id": 14,
         "army": { "id": 3, "type": "Army" },
         "rank": "pawn",
         "isKing": false,
         "moveCount": 0
       },
       "15": {
+        "id": 15,
         "army": { "id": 3, "type": "Army" },
         "rank": "pawn",
         "isKing": false,
         "moveCount": 0
       },
       "16": {
+        "id": 16,
          "army": { "id": 3, "type": "Army" },
          "rank": "pawn",
          "isKing": false,
          "moveCount": 0
       },
       "17": {
+        "id": 17,
         "army": { "id": 3, "type": "Army" },
         "rank": "pawn",
         "isKing": false,
         "moveCount": 0
       },
       "18": {
+        "id": 18,
         "army": { "id": 3, "type": "Army" },
         "rank": "pawn",
         "isKing": false,
         "moveCount": 0
       },
       "19": {
+        "id": 19,
         "army": { "id": 3, "type": "Army" },
         "rank": "pawn",
         "isKing": false,
         "moveCount": 0
       },
       "20": {
+        "id": 20,
         "army": { "id": 3, "type": "Army" },
         "rank": "pawn",
         "isKing": false,
         "moveCount": 0
       },
       "21": {
+        "id": 21,
         "army": { "id": 3, "type": "Army" },
         "rank": "pawn",
         "isKing": false,
         "moveCount": 0
       },
       "22": {
+        "id": 22,
         "army": { "id": 4, "type": "Army" },
         "rank": "pawn",
         "isKing": false,
         "moveCount": 0
       },
       "23": {
+        "id": 23,
         "army": { "id": 4, "type": "Army" },
         "rank": "pawn",
         "isKing": false,
         "moveCount": 0
       },
       "24": {
+        "id": 24,
         "army": { "id": 4, "type": "Army" },
         "rank": "pawn",
         "isKing": false,
         "moveCount": 0
       },
       "25": {
+        "id": 25,
         "army": { "id": 4, "type": "Army" },
         "rank": "pawn",
         "isKing": false,
         "moveCount": 0
       },
       "26": {
+        "id": 26,
         "army": { "id": 4, "type": "Army" },
         "rank": "pawn",
         "isKing": false,
         "moveCount": 0
       },
       "27": {
+        "id": 27,
         "army": { "id": 4, "type": "Army" },
         "rank": "pawn",
         "isKing": false,
         "moveCount": 0
       },
       "28": {
+        "id": 28,
         "army": { "id": 4, "type": "Army" },
         "rank": "pawn",
         "isKing": false,
         "moveCount": 0
       },
       "29": {
+        "id": 29,
         "army": { "id": 4, "type": "Army" },
         "rank": "pawn",
         "isKing": false,
         "moveCount": 0
       },
       "30": {
+        "id": 30,
         "army": { "id": 4, "type": "Army" },
         "rank": "rook",
         "isKing": false,
         "moveCount": 0
       },
       "31": {
+        "id": 31,
         "army": { "id": 4, "type": "Army" },
         "rank": "bishop",
         "isKing": false,
         "moveCount": 0
       },
       "32": {
+        "id": 32,
         "army": { "id": 4, "type": "Army" },
         "rank": "knight",
         "isKing": false,
         "moveCount": 0
       },
       "33": {
+        "id": 33,
         "army": { "id": 4, "type": "Army" },
         "rank": "queen",
         "isKing": false,
         "moveCount": 0
       },
       "34": {
+        "id": 34,
         "army": { "id": 4, "type": "Army" },
         "rank": "king",
         "isKing": true,
         "moveCount": 0
       },
       "35": {
+        "id": 35,
         "army": { "id": 4, "type": "Army" },
         "rank": "knight",
         "isKing": false,
         "moveCount": 0
       },
       "36": {
+        "id": 36,
         "army": { "id": 4, "type": "Army" },
         "rank": "bishop",
         "isKing": false,
         "moveCount": 0
       },
       "37": {
+        "id": 37,
         "army": { "id": 4, "type": "Army" },
         "rank": "rook",
         "isKing": false,
