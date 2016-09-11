@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+    "moduleResolution": "node",
+		"module": "CommonJS",
+		"target": "es5",
+		"noImplicitAny": true,
+		"outDir": "dist",
+    "sourceMap": true
+	},
+	"files": [
+		"src/js-chess.ts",
+    "spec/test-spec.ts"
+	]
+}

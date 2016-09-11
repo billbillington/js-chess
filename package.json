@@ -1,0 +1,26 @@
+{
+  "name": "js-chess",
+  "version": "0.0.1",
+  "description": "Library for implimenting chess style games",
+  "main": "dist/js-chess.js",
+  "scripts": {
+    "postinstall": "autodts link",
+    "clean": "rimraf dist",
+    "prepublish": "npm run clean && tsc && autodts generate",
+    "test": "jasmine"
+  },
+  "author": "William Billington",
+  "license": "MIT",
+  "typescript": {
+    "definition": "js-chess.d.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@lib/autodts-generator": "~0.0.1",
+    "@types/jasmine": "^2.2.34",
+    "autodts": "~0.0.4",
+    "jasmine": "~2.2.1",
+    "rimraf": "^2.5.4",
+    "typescript": "~2.0.3"
+  }
+}
