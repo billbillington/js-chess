@@ -20,6 +20,17 @@ export default class BoardLocation {
     this._col = col;
   }
 
+  static fromHash(hash: string): BoardLocation{
+    let result = this.hashRegex().exec(hash)
+    if(!result) {
+     throw new Error(`format of hash '${hash}' is invalid`)
+    }
+
+    let col: number = Number(result[1]);
+    let row: number = Number(result[2]);
+    return new BoardLocation(row, col);
+  }
+
   row(): number{
     return this._row;
   }
@@ -38,5 +49,9 @@ export default class BoardLocation {
 
   maxCols(): number{
     return 8;
+  }
+
+  static hashRegex(): RegExp{
+    return /c([0-9]+)r([0-9]+)/;
   }
 }

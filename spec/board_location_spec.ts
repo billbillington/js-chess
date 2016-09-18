@@ -79,4 +79,36 @@ describe("BoardLocation", function() {
       });
     });
   });
+
+  describe("fromHash() constructor", function(){
+    var row = 4;
+    var col = 5;
+
+    describe("supplying hash in wrong format", function(){
+      it("should throw error", function(){
+        let invalidHash = 'invalid_hash';
+
+        expect(
+          () => { BoardLocation.fromHash(invalidHash) }
+        ).toThrowError(
+          `format of hash '${invalidHash}' is invalid`
+        )
+      });
+    });
+
+    describe("supplying hash in correct format", function(){
+      it("should instantiate a location with correct values", function(){
+        let location = new BoardLocation(row, col);
+
+        let newLocation = BoardLocation.fromHash(location.hash());
+
+        expect(
+          newLocation.col()
+        ).toEqual(col);
+        expect(
+          newLocation.row()
+        ).toEqual(row);
+      });
+    });
+  });
 });

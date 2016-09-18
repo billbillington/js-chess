@@ -14,7 +14,10 @@
   "typescript": {
     "definition": "js-chess.d.ts"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/lodash": "~4.14.36",
+    "lodash": "^4.16.2"
+  },
   "devDependencies": {
     "@lib/autodts-generator": "~0.0.1",
     "@types/jasmine": "^2.2.34",
