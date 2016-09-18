@@ -7,9 +7,5 @@
 		"noImplicitAny": true,
 		"outDir": "dist",
     "sourceMap": true
-	},
-	"files": [
-		"src/js-chess.ts",
-    "spec/two_dimentional_fixed_array_spec.ts"
-	]
+	}
 }
