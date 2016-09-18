@@ -10,7 +10,6 @@
 	},
 	"files": [
 		"src/js-chess.ts",
-    "spec/test-spec.ts",
     "spec/two_dimentional_fixed_array_spec.ts"
 	]
 }
